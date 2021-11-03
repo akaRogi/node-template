@@ -1,4 +1,4 @@
-## 这是一个开箱即用node+expexpress+ts模板，内含以下功能
+## 这是一个开箱即用node+express+ts模板，内含以下功能
 + 利用node的`require`模块进行api的自动化生成
 + 微信公众号的授权
     + 企业公众号的用户信息
