@@ -1,0 +1,3 @@
+export = {
+    gettoken: { type: "get" }
+}
