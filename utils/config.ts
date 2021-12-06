@@ -6,7 +6,7 @@ module.exports = {
         // '/users/demo'
     ],
     // 去除token整个类路由校验
-    removeAuthorityClass: ['/wx', '/applets'],
+    removeAuthorityClass: ['/wx', '/applets', '/common'],
     // 公众号配置
     wxConfig: {
         appId: '',

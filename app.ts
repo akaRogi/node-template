@@ -6,6 +6,7 @@ const logger : any = require('morgan');
 const multer : any = require('multer');
 const routerMap = require('./api/index');
 const authority = require('./middleware/authority');
+const verifyValue = require('./middleware/verifyValue');
 const config = require('./utils/config');
 const app = express();
 
@@ -32,6 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(authority);
+app.use(verifyValue);
 
 routerMap.forEach(el => {
   app.use(`/${el.routerClass}`, el.router);
