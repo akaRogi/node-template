@@ -46,7 +46,10 @@ export = {
 }
 ```
 
-这样子就能在浏览器里面输入`ip/common/demo`进行访问了，**如果请求为`POST`则讲`type`改成`POST`即可**，除了`type`选项，还有一个名为`verifyValue`的选项，用于配置该`api的非空校验`，`default`为该字段的默认值，详情查看`api/common/router/index.ts`里面的`demo`路由
+这样子就能在浏览器里面输入`ip/common/demo`进行访问了，**如果请求为`POST`则讲`type`改成`POST`即可**
+
+## 添加api的必填参数校验
+接回上面的教程，除了`type`选项，还有一个名为`verifyValue`的选项，用于配置该`api的非空校验`，`default`为该字段的默认值，详情查看`api/common/router/index.ts`里面的`demo`路由
 
 在api文件里面的`req`进行了封装过滤，如果是`GET`请求`req`返回为`req.query`，如果请求方式为`POST` `req`则会返回`req.body`，在运行项目的时候可以尝试输出`req`进行查看
 
@@ -77,6 +80,32 @@ export = {
 配置上述的敏感密钥以及相关配置可在`utils/config.ts`配置
 
 ## 运行项目
+### 全局安装过express-generator（首次使用需安装）
+```
+npm install -g express-generator
+```
+
+### 全局安装TS（首次使用需安装）
+```
+npm install -g typescript
+```
+
+### 安装express类型依赖（首次使用需安装）
+```
+npm install @types/node --save-dev
+npm install @types/express --save-dev
+```
+
+### 全局安装ts-node（首次使用需安装）
+```
+npm install ts-node -g
+```
+
+### 全局安装nodemon（首次使用需安装）
+```
+npm install nodemon -g
+```
+
 ### 引入依赖
 ```
 npm i
