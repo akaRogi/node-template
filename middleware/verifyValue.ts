@@ -2,18 +2,18 @@ module.exports = (async (req: any, res: any, next: any) => {
     const urlSplit = req.url.split(/[?]|[/]/);
     urlSplit.shift();
     try {
-        const verify = await require(`../api/${urlSplit[0]}/router`);
+        const verify = await require(`../api/${urlSplit[1]}/router`);
         if(!verify) {
             return next()
         }
         const data = {...req.body, ...req.query};
-        const verifyRes = verify[urlSplit[1]];
-        if(!verifyRes.verifyValue) {
+        const verifyValue = verify[urlSplit[2]];
+        if(!verifyValue.verifyValue) {
             return next();
         }
         let off = true;
-        for(let k in verifyRes.verifyValue) {
-            const itemverifyValue = verifyRes.verifyValue[k];
+        for(let k in verifyValue.verifyValue) {
+            const itemverifyValue = verifyValue.verifyValue[k];
             if(!data[k] && itemverifyValue.required && !itemverifyValue.default) {
                 off = false;
                 res.send({

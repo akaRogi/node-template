@@ -1,3 +1,10 @@
+/*
+ * @Author: rogi
+ * @Date: 2022-07-20 08:53:36
+ * @LastEditTime: 2022-07-20 09:06:41
+ * @LastEditors: rogi
+ * @Description: 描述
+ */
 const createError : any = require('http-errors');
 const express : any = require('express');
 const path : any = require('path');
@@ -36,7 +43,7 @@ app.use(authority);
 app.use(verifyValue);
 
 routerMap.forEach(el => {
-  app.use(`/${el.routerClass}`, el.router);
+  app.use(`/api/${el.routerClass}`, el.router);
 });
 
 // catch 404 and forward to error handler
